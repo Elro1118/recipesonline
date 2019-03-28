@@ -8,17 +8,19 @@ class Home extends Component {
         <h1> Your Recipes</h1>
         <ul>
           <li>
-            <Link to={`/Ingredient`}>Add New Ingredient</Link>
+            <Link to={`/AddIngredient`}>Add New Ingredient</Link>
           </li>
           <li>
-            <Link to={`/Dish`}>Add New Dish</Link>
+            <Link to={`/AddDish`}>Add New Dish</Link>
           </li>
           <li>
-            <Link to={`/Recipe`}>Add New Recipe</Link>
+            <Link to={`/AddRecipe`}>Add New Recipe</Link>
           </li>
-          <li>Ingredient List</li>
+          <li>
+            <Link to={`/IngredientList`}>Ingredient List</Link>
+          </li>
           <li>Dish List</li>
-          <lis>Recipe List</lis>
+          <li>Recipe List</li>
         </ul>
       </div>
     )

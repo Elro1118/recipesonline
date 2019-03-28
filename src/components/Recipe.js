@@ -37,8 +37,6 @@ class Recipe extends Component {
           newRecipe: resp.data
         })
       })
-
-    event.preventDefault()
   }
 
   displayIngredientList = () => {
