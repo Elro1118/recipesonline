@@ -19,7 +19,9 @@ class Home extends Component {
           <li>
             <Link to={`/IngredientList`}>Ingredient List</Link>
           </li>
-          <li>Dish List</li>
+          <li>
+            <Link to={`/DishList`}>Dish List</Link>
+          </li>
           <li>Recipe List</li>
         </ul>
       </div>

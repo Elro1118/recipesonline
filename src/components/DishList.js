@@ -2,34 +2,34 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-class IngredientList extends Component {
+class DishList extends Component {
   state = {
-    ingredient: [],
+    dish: [],
     requestStatus: 0
   }
 
   componentDidMount() {
-    this.displayIngredientList()
+    this.displayDishList()
   }
 
-  displayIngredientList = () => {
-    axios.get('https://localhost:5001/api/Ingredient').then(resp => {
+  displayDishList = () => {
+    axios.get('https://localhost:5001/api/Dish').then(resp => {
       console.log(resp)
       this.setState({
-        ingredient: resp.data
+        dish: resp.data
       })
     })
   }
 
-  deleteIngredient = event => {
+  deleteDish = event => {
     console.log(event.target.value)
     axios
-      .delete(`https://localhost:5001/api/Ingredient/${event.target.value}`)
+      .delete(`https://localhost:5001/api/Dish/${event.target.value}`)
       .then(resp => {
         console.log(resp)
 
         if (resp.status === 200) {
-          this.displayIngredientList()
+          this.displayDishList()
           this.setState({
             requestStatus: resp.status
           })
@@ -53,39 +53,28 @@ class IngredientList extends Component {
           <thead className="thead-light">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Ingredient</th>
-              <th scope="col">Organic</th>
+              <th scope="col">Name</th>
+              <th scope="col">Origin</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.ingredient.map((m, i) => {
+            {this.state.dish.map((m, i) => {
               return (
                 <tr key={i}>
                   <th scope="row">{m.id}</th>
                   <td>{m.name}</td>
-                  <td>
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value=" "
-                      id="defaultCheck1"
-                      disabled
-                      checked={m.organic}
-                    />
-                  </td>
+                  <td>{m.origin}</td>
                   <td>
                     <button
                       className="btn btn-danger"
                       value={m.id}
-                      onClick={this.deleteIngredient}
+                      onClick={this.deleteDish}
                     >
                       Delete
                     </button>
                   </td>
                   <td>
-                    <Link
-                      to={`/UpdateIngredient/${m.id}/${m.name}/${m.organic}`}
-                    >
+                    <Link to={`/UpdateDish/${m.id}/${m.name}/${m.origin}`}>
                       <button className="btn btn-warning">Update</button>
                     </Link>
                   </td>
@@ -99,4 +88,4 @@ class IngredientList extends Component {
   }
 }
 
-export default IngredientList
+export default DishList

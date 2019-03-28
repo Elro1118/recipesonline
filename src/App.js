@@ -6,6 +6,8 @@ import AddDish from './components/AddDish'
 import AddRecipe from './components/AddRecipe'
 import IngredientList from './components/IngredientList'
 import UpdateIngredient from './components/UpdateIngredient'
+import DishList from './components/DishList'
+import UpdateDish from './components/UpdateDish'
 
 class App extends Component {
   render() {
@@ -22,6 +24,12 @@ class App extends Component {
               exact
               path="/UpdateIngredient/:id/:name/:organic"
               component={UpdateIngredient}
+            />
+            <Route exact path="/DishList" component={DishList} />
+            <Route
+              exact
+              path="/UpdateDish/:id/:name/:origin"
+              component={UpdateDish}
             />
           </Switch>
         </Router>
