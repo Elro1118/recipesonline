@@ -16,7 +16,8 @@ class AddRecipe extends Component {
       }
     },
     uiSchema: {
-      'ui:order': ['quantity', 'unit']
+      'ui:order': ['quantity', 'unit'],
+      id: { 'ui:widget': 'hidden' }
     }
   }
 

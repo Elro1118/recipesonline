@@ -8,6 +8,9 @@ import IngredientList from './components/IngredientList'
 import UpdateIngredient from './components/UpdateIngredient'
 import DishList from './components/DishList'
 import UpdateDish from './components/UpdateDish'
+import RecipeList from './components/RecipeList'
+import UpdateRecipe from './components/UpdateRecipe'
+import Search from './components/Search'
 
 class App extends Component {
   render() {
@@ -30,6 +33,12 @@ class App extends Component {
               exact
               path="/UpdateDish/:id/:name/:origin"
               component={UpdateDish}
+            />
+            <Route exact path="/RecipeList" component={RecipeList} />
+            <Route
+              exact
+              path="/UpdateRecipe/:id/:dish/:ingredient/:quantity/:unit/:dishId/:ingredientId"
+              component={UpdateRecipe}
             />
           </Switch>
         </Router>

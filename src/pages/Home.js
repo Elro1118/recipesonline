@@ -22,7 +22,9 @@ class Home extends Component {
           <li>
             <Link to={`/DishList`}>Dish List</Link>
           </li>
-          <li>Recipe List</li>
+          <li>
+            <Link to={'/RecipeList'}>Recipe List</Link>
+          </li>
         </ul>
       </div>
     )
